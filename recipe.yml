@@ -35,6 +35,7 @@ config:
           region: content
           settings: {  }
           third_party_settings: {  }
+    core.entity_form_display.user.user.default:
       setComponent:
         name: field_password_expiration
         options:
