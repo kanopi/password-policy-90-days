@@ -43,4 +43,9 @@ config:
             settings:
               display_label: true
             third_party_settings: {  }
-
+    # Add permission to Administrator role we assume exists.
+    user.role.administrator:
+      ensure_exists:
+        label: 'Administrator'
+      grantPermissions:
+        - 'manage password reset'
