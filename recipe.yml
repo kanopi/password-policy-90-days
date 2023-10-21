@@ -27,23 +27,21 @@ config:
     # How do we add hidden fields?
     # Add fields to the user form.
     core.entity_form_display.user.user.default:
-      setComponents:
-        -
-          field_last_password_reset
-          -
-            type: datetime_default
-            weight: 4
-            region: content
-            settings: {  }
-            third_party_settings: {  }
-        -
-          field_password_expiration
-          -
-            type: boolean_checkbox
-            weight: 3
-            region: content
-            settings:
-              display_label: true
-            third_party_settings: {  }
+      setComponent:
+        name: field_last_password_reset
+        options:
+          type: datetime_default
+          weight: 4
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+#        name: field_password_expiration
+#        options:
+#          type: boolean_checkbox
+#          weight: 3
+#          region: content
+#          settings:
+#            display_label: true
+#          third_party_settings: {  }
     # User display: we would only want to add dependencies and hidden fields.
     # core.entity_view_display.user.user.default:
