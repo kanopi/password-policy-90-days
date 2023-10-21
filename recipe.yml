@@ -1,0 +1,47 @@
+name: 'password Policy 90 Days'
+description: 'Installs and configures Password Policy and sets 90 day expiration default.'
+type: 'Site'
+
+install:
+  # Install primary module.
+  - password_policy
+  # Install submodules.
+  - password_policy_characters
+  - password_policy_history
+  - password_policy_length
+
+config:
+  import:
+    password_policy:
+      # Add Password Policy Settings
+      - password_policy.settings
+      # Add Password Policy fields.
+      - field.field.user.user.field_last_password_reset
+      - field.field.user.user.field_password_expiration
+      - field.field.user.user.field_pending_expire_sent
+      - field.storage.user.field_last_password_reset
+      - field.storage.user.field_password_expiration
+      - field.storage.user.field_pending_expire_sent
+  actions:
+    # How to we add dependencies to modules and config?
+    # How do we add hidden fields?
+    # Add fields to the user form.
+    core.entity_form_display.user.user.default:
+      setComponents:
+        name: field_last_password_reset
+        options:
+          type: datetime_default
+          weight: 4
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        name: field_password_expiration
+        options:
+          type: boolean_checkbox
+          weight: 3
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+    # User display: we would only want to add dependencies and hidden fields.
+    # core.entity_view_display.user.user.default:
