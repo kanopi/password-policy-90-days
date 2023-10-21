@@ -27,7 +27,7 @@ config:
     # How do we add hidden fields?
     # Add fields to the user form.
     core.entity_form_display.user.user.default:
-      setComponents:
+      setComponent:
         name: field_last_password_reset
         options:
           type: datetime_default
@@ -35,6 +35,7 @@ config:
           region: content
           settings: {  }
           third_party_settings: {  }
+      setComponent:
         name: field_password_expiration
         options:
           type: boolean_checkbox
