@@ -23,8 +23,6 @@ config:
       - field.storage.user.field_password_expiration
       - field.storage.user.field_pending_expire_sent
   actions:
-    # How to we add dependencies to modules and config?
-    # How do we add hidden fields?
     # Add fields to the user form.
     core.entity_form_display.user.user.default:
       setComponents:
@@ -45,5 +43,4 @@ config:
             settings:
               display_label: true
             third_party_settings: {  }
-    # User display: we would only want to add dependencies and hidden fields.
-    # core.entity_view_display.user.user.default:
+
