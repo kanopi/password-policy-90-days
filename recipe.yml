@@ -30,7 +30,7 @@ config:
           name: field_last_password_reset
           options:
             type: datetime_default
-            weight: 5
+            weight: 4
             region: content
             settings: {  }
             third_party_settings: {  }
@@ -38,7 +38,7 @@ config:
           name: field_password_expiration
           options:
             type: boolean_checkbox
-            weight: 12
+            weight: 3
             region: content
             settings:
               display_label: true
