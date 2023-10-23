@@ -20,6 +20,6 @@
         ],
         "post-update-cmd": [
             "@move-tests"
-        ]
+        ],
     },
 }
