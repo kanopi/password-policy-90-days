@@ -12,5 +12,14 @@
     ],
     "require": {
         "drupal/password_policy": "*"
-    }
+    },
+    "scripts": {
+        "move-tests": "rsync -az --delete web/recipes/contrib/password-policy-90-days/password-policy-90-days.cy.js tests/cypress/cypress/e2e/*; echo 'Moved Cypress tests to appropriate directory.' ",
+        "post-install-cmd": [
+            "@move-tests"
+        ],
+        "post-update-cmd": [
+            "@move-tests"
+        ]
+    },
 }
