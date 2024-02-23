@@ -18,6 +18,9 @@ This recipe installs a Password Policy that has the following rules:
 
 See https://www.drupal.org/files/issues/2023-10-01/Configuring%20Drupal%20to%20Apply%20Recipes.md
 
+The patch referenced in this file is not valid.  Please refer to the [Recipes Initiative project page](https://www.drupal.org/project/distributions_recipes) for the patch version that applies to your current Drupal version.
+
+After running `composer update drupal/core`, clear the Drupal cache with `drush cr` before doing any other recipe operations.
 
 ## Installing this Recipe
 
@@ -26,9 +29,11 @@ See https://www.drupal.org/files/issues/2023-10-01/Configuring%20Drupal%20to%20A
 
 ## Applying this Recipe
 
-CD into your webroot.
+`cd` into your drupal root.
 Run`php core/scripts/drupal recipe recipes/contrib/password-policy-90-days`
 Run `drush cr`
+
+**or**
 
 If you have our Docksal command in your project, run the following command:
 `fin recipe-apply password-policy-90-days`
